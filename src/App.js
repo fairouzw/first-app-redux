@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import {Provider} from "react-redux"; 
+//this can go in index.js as well
+import store from "./store";
 
-function App() {
+
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Provider store={store}>
+      <h1> Redux Workshop Things </h1>
+      </Provider> 
     </div>
   );
 }
 
 export default App;
+
+//GENERAL NOTES:
+//here you can keep it functional component - because you don't need a state here.
+//side note if you use hooks you don't need class component at all
+//1. create store - this needs to wrap globally - only set it up once
+//2. get data and send to store 
+//want to provide store to app - this is called a provider
+//provide component is coming from redux-react 
