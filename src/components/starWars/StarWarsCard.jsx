@@ -7,9 +7,10 @@ function StarWarsCard(props) {
     <div className="starWarsCard">
       {props.data && props.data.map(e => {
         return(
-        <ul>
-          <li> </li>
-          <li> </li>
+        <ul className="dataWrapper">
+          <li >{e.name} </li>
+          <li>{e.skin_color} </li>
+          <li>{e.gender} </li>
         </ul>
         )
       })}
