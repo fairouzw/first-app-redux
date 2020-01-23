@@ -3,7 +3,7 @@ import "./App.css";
 import {Provider} from "react-redux"; 
 //this can go in index.js as well
 import store from "./store";
-import starWars from "./components/starWars/starWars";
+import StarWars from "./components/starWars/starWars.jsx";
 
 
 function App(props) {
@@ -11,6 +11,7 @@ function App(props) {
     <div className="App">
       <Provider store={store}>
       <h1> Redux Workshop Things </h1>
+      <StarWars/>
       </Provider> 
     </div>
   );
