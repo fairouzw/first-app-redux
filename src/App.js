@@ -3,6 +3,7 @@ import "./App.css";
 import {Provider} from "react-redux"; 
 //this can go in index.js as well
 import store from "./store";
+import starWars from "./components/starWars/starWars";
 
 
 function App(props) {

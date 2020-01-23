@@ -2,12 +2,14 @@ import {createStore, compose, applyMiddleware} from 'redux';
 import thunk from "redux-thunk";
 import rootReducer from './rootReducer';
 
+
 const initialState = {};
 //reducer is a funciton that returns an object of data - which then modifies the state.
 //need to create one file that combine reducers - to then bring all the reducers to our store.
 
-const middleWare = {thunk}
+const middleWare = [thunk]
 //need thunk/middleware before getting data from api
+//nb can't use spread syntax on object.
 
 const store = createStore(
   rootReducer,
