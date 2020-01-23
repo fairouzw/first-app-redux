@@ -5,14 +5,30 @@ import {getWeatherData} from './weatherAction';
 class Weather extends Component {
   constructor() {
     super();
+    this.state = {
+      city: ""
+    }
   }
-  componentWillMount() {
-    this.props.getWeatherData()
+  inputHandler = (e) =>{
+    this.setState({
+      city: e.target.value
+    })
   }
+
+  clickHandler = () => {
+    this.props.getWeatherData(this.state.city)
+  };
+  
+  // componentWillMount() {
+  //   this.props.getWeatherData('berlin')
+  // }
+
   render() {
     console.log(this.props)
     return (
       <div>
+        <input type="text" value={this.state.city} onChange={this.inputHandler}/>
+        <button onClick={this.clickHandler}> Click</button>
   <h1> The weather in {this.props.name} is {this.props.mainWeather && this.props.mainWeather.temp} degrees </h1>
       </div>
     )
