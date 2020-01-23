@@ -1,6 +1,8 @@
-//action is function that builds the data from reducer up.
+//action is function that triggers and builds the data from reducer up.
 //action job is to provide the data for the reducer
 //create reducer and action for each page - not for each component
+//reducer is a function that gets data from action - and returns to our state.
+
 
 import axios from "axios";
 
